@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age_in_days: 
+  gender_id: 1
+  image_id: 1
+
+two:
+  name: MyString
+  age_in_days: 
+  gender_id: 1
+  image_id: 1
