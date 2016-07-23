@@ -4,7 +4,7 @@
   %thead
     %tr
       %th Name
-      %th Age in days
+      %th Birthday
       %th Gender
       %th Image
       %th{:colspan => "3"}
@@ -13,7 +13,7 @@
       %tr
         %td= pet.name
         %td= pet.birthday
-        %td= pet.gender_id
+        %td= pet.gender.name
         %td= pet.image_id
         %td= link_to 'Show', pet
         %td= link_to 'Edit', edit_pet_path(pet)
