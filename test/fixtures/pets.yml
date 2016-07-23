@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  age_in_days: 
+  birthday: 
   gender_id: 1
   image_id: 1
 
 two:
   name: MyString
-  age_in_days: 
+  birthday: 
   gender_id: 1
   image_id: 1

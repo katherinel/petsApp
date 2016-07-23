@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722225427) do
+ActiveRecord::Schema.define(version: 20160723225442) do
 
   create_table "genders", force: :cascade do |t|
     t.string   "name"
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20160722225427) do
 
   create_table "pets", force: :cascade do |t|
     t.string   "name"
-    t.integer  "age_in_days"
     t.integer  "gender_id"
     t.integer  "image_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user"
+    t.date     "birthday"
   end
 
   create_table "users", force: :cascade do |t|

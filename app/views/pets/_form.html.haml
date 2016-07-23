@@ -12,9 +12,9 @@
     %br/
     = f.text_field :name
   .field
-    = f.label :age_in_days
+    = f.label :birthday
     %br/
-    = f.text_field :age_in_days
+    = f.text_field :birthday, :data => { :provide => "datepicker" }
   .field
     = f.label :gender_id
     %br/
