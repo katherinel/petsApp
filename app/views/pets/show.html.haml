@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @pet.name
+%p
+  %strong Age in days:
+  = @pet.age_in_days
+%p
+  %strong Gender:
+  = @pet.gender.name
+%p
+  %strong Image:
+  = @pet.image_id
+= link_to 'Edit', edit_pet_path(@pet)
+|
+=link_to 'Back', pets_path
