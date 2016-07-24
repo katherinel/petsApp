@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:index, :show]
+  before_action :verify_user, :except => [:index, :show]
 
   # GET /pets
   # GET /pets.json
@@ -72,5 +73,9 @@ class PetsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
       params.require(:pet).permit(:name, :birthday, :gender_id, :species_id, :image_id)
+    end
+
+    def verify_user
+      redirect_to root_url unless @pet.user_verified?(current_user)
     end
 end
