@@ -13,7 +13,8 @@
       %tr
         %td= pet.name
         %td= pet.birthday
-        %td= pet.gender.name
+        %td= pet.gender.try(:name)
+        %td= pet.species.try(:name)
         %td= pet.image_id
         %td= link_to 'Show', pet
         %td= link_to 'Edit', edit_pet_path(pet)

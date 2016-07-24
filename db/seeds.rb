@@ -8,3 +8,4 @@
 
 #Gender.create( name: 'Male' )
 genders = Gender.create([{ id: 1, name: 'Male'}, { id: 2, name: 'Female'}, { id: 3, name: 'Unknown' }])
+species = Species.create([{ name: 'Dog' }, { name: 'Cat' }, { name: 'Fish' }, { name: 'Bird' }, { name: 'Other' } ])

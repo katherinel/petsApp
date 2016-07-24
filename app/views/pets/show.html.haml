@@ -7,7 +7,10 @@
   = @pet.birthday
 %p
   %strong Gender:
-  = @pet.gender.name
+  = @pet.gender.try(:name)
+%p
+  %strong Species:
+  = @pet.species.try(:name)
 %p
   %strong Image:
   = @pet.image_id
