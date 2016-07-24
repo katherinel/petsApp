@@ -4,7 +4,7 @@
   %thead
     %tr
       %th Name
-      %th Birthday
+      %th Age
       %th Gender
       %th Image
       %th{:colspan => "3"}
@@ -12,7 +12,7 @@
     - @pets.each do |pet|
       %tr
         %td= pet.name
-        %td= pet.birthday
+        %td= age(pet)
         %td= pet.gender.try(:name)
         %td= pet.species.try(:name)
         %td= pet.image_id

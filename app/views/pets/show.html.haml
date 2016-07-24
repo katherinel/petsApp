@@ -3,8 +3,8 @@
   %strong Name:
   = @pet.name
 %p
-  %strong Birthday:
-  = @pet.birthday
+  %strong Age:
+  = age(@pet)
 %p
   %strong Gender:
   = @pet.gender.try(:name)
