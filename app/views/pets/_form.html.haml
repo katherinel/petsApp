@@ -24,8 +24,12 @@
     %br/
     = f.collection_select(:species_id, Species.all, :id, :name)
   .field
-    = f.label :image_id
+    = f.label :image
     %br/
-    = f.number_field :image_id
+    = f.file_field :image
+    - if f.object.image?
+      = image_tag f.object.image.medium.url
+      = f.label :remove_image
+      = f.check_box :remove_image
   .actions
     = f.submit

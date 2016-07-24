@@ -15,7 +15,7 @@
         %td= age(pet)
         %td= pet.gender.try(:name)
         %td= pet.species.try(:name)
-        %td= pet.image_id
+        %td= image_tag pet.image.medium.url
         %td= link_to 'Show', pet
         - if pet.user_verified?(current_user)
           %td= link_to 'Edit', edit_pet_path(pet)

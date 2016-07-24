@@ -13,7 +13,7 @@
   = @pet.species.try(:name)
 %p
   %strong Image:
-  = @pet.image_id
+  = image_tag @pet.image.medium.url
 - if @pet.user_verified?(current_user)
   = link_to 'Edit', edit_pet_path(@pet)
   |
