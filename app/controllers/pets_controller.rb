@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:index, :show]
-  before_action :verify_user, :except => [:index, :show]
+  before_action :verify_user, :except => [:index, :show, :new, :create]
 
   # GET /pets
   # GET /pets.json
