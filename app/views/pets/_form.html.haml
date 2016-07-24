@@ -14,7 +14,7 @@
   .field
     = f.label :birthday
     %br/
-    = f.text_field :birthday, :data => { :provide => "datepicker" }
+    = f.text_field :birthday, :data => { :provide => "datepicker", 'date-format' => 'yyyy-mm-dd' }, :class => "datepicker"
   .field
     = f.label :gender_id
     %br/
