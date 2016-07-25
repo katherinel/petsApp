@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a:hover {
+	background-color: transparent;
+}
+
 .img-responsive {
 	margin: 0 auto;
 }
 
 .panel-body {
 	padding: 0;
+}
+
+#datepicker {
+	z-index: 10000;
 }

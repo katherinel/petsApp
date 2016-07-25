@@ -9,7 +9,7 @@
     #navbar-main.navbar.navbar-default.navbar-fixed-top
       .container
         .navbar-header
-          %h1.navbar-brand Petbook
+          =link_to "Petbook", root_url, :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?

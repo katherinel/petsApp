@@ -1,35 +1,41 @@
-= form_for(@pet) do |f|
-  - if @pet.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@pet.errors.count, "error")
-        prohibited this pet from being saved:
-      %ul
-        - @pet.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :birthday
-    %br/
-    = f.text_field :birthday, :data => { :provide => "datepicker", 'date-format' => 'yyyy-mm-dd' }, :class => "datepicker"
-  .field
-    = f.label :gender_id
-    %br/
-    = f.collection_select(:gender_id, Gender.all, :id, :name)
-  .field
-    = f.label :species_id
-    %br/
-    = f.collection_select(:species_id, Species.all, :id, :name)
-  .field
-    = f.label :image
-    %br/
-    = f.file_field :image
-    - if f.object.image?
-      = image_tag f.object.image.medium.url
-      = f.label :remove_image
-      = f.check_box :remove_image
-  .actions
-    = f.submit
+.well.bs-component
+  = form_for @pet, :html => {:class => "form-horizontal"} do |f|
+    - if @pet.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@pet.errors.count, "error")
+          prohibited this pet from being saved:
+        %ul
+          - @pet.errors.full_messages.each do |message|
+            %li= message
+    %fieldset
+      .form-group
+        = f.label :name, :class => "col-lg-2"
+        .col-lg-10
+          = f.text_field :name
+      .form-group
+        = f.label :birthday, :class => "col-lg-2"
+        .col-lg-10
+          = f.text_field :birthday, :data => { :provide => "datepicker", 'date-format' => 'yyyy-mm-dd' }
+      .form-group
+        = f.label :gender_id, :class => "col-lg-2"
+        .col-lg-10
+          = f.collection_radio_buttons(:gender_id, Gender.all, :id, :name) do |b|
+            .radio
+              = b.label { b.radio_button + b.text}
+      .form-group
+        = f.label :species_id, :class => "col-lg-2"
+        .col-lg-10
+          = f.collection_select(:species_id, Species.all, :id, :name, {}, {:class => "form-control"})
+      .form-group
+        = f.label :image, :class => "col-lg-2"
+        .col-lg-10
+          = f.file_field :image
+        - if f.object.image?
+          = image_tag f.object.image.medium.url
+          = f.label :remove_image, :class => "col-lg-2"
+          .col-lg-10
+            = f.check_box :remove_image
+      .form-group
+        .col-lg-10
+          = f.submit 'Submit', :class => "btn btn-primary pull-right"
