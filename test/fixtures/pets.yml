@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  birthday: 
+spot:
+  name: Spot
+  birthday: 2014-09-15
   gender_id: 1
-  image_id: 1
+  user_id: 1
+  species_id: 1
+  image:
 
-two:
-  name: MyString
-  birthday: 
+fluffy:
+  name: Fluffy
+  birthday: 2009-08-01
   gender_id: 1
-  image_id: 1
+  user_id: 2
+  species_id: 2
+  image: 

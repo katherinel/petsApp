@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  type: 
+male:
+  name: Male 
 
-two:
-  type: 
+female:
+  name: Female
+
+unknown:
+  name: Unknown
