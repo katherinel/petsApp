@@ -40,6 +40,7 @@ gem 'bootstrap-sass', '~>3.3.6'
 gem 'bootstrap-datepicker-rails'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+gem 'bootswatch-rails'
 
 group :test do
 	gem 'minitest'
