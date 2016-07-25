@@ -9,7 +9,7 @@ class Pet < ActiveRecord::Base
 	validate :birthday_must_be_past
 
 	def user_verified?(current_user)
-		current_user.id == self.user_id
+		current_user.nil? ? false : (current_user.id == self.user_id)
 	end
 
 	def birthday_must_be_past
