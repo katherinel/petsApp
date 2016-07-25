@@ -1,5 +1,5 @@
 .well.bs-component
-  = form_for @pet, :html => {:class => "form-horizontal"} do |f|
+  = form_for @pet, :html => {:class => "form-vertical"} do |f|
     - if @pet.errors.any?
       #error_explanation
         %h2
@@ -9,33 +9,32 @@
           - @pet.errors.full_messages.each do |message|
             %li= message
     %fieldset
-      .form-group
-        = f.label :name, :class => "col-lg-2"
-        .col-lg-10
-          = f.text_field :name
-      .form-group
-        = f.label :birthday, :class => "col-lg-2"
-        .col-lg-10
-          = f.text_field :birthday, :data => { :provide => "datepicker", 'date-format' => 'yyyy-mm-dd' }
-      .form-group
-        = f.label :gender_id, :class => "col-lg-2"
-        .col-lg-10
+      .col-md-6
+        .form-group
+          = f.label :name
+          = f.text_field :name, :class => "form-control"
+        .form-group
+          = f.label :birthday
+          = f.text_field :birthday, :data => { :provide => "datepicker", 'date-format' => 'yyyy-mm-dd' }, :class => "form-control"
+        .form-group
+          = f.label :gender_id
           = f.collection_radio_buttons(:gender_id, Gender.all, :id, :name) do |b|
             .radio
               = b.label { b.radio_button + b.text}
-      .form-group
-        = f.label :species_id, :class => "col-lg-2"
-        .col-lg-10
+        .form-group
+          = f.label :species_id
           = f.collection_select(:species_id, Species.all, :id, :name, {}, {:class => "form-control"})
-      .form-group
-        = f.label :image, :class => "col-lg-2"
-        .col-lg-10
+      .col-md-6
+        .form-group
+          = f.label :image
           = f.file_field :image
         - if f.object.image?
-          = image_tag f.object.image.medium.url
-          = f.label :remove_image, :class => "col-lg-2"
-          .col-lg-10
+          .form-group
+            = image_tag f.object.image.medium.url, :class => "img-responsive"
+          .form-group
             = f.check_box :remove_image
-      .form-group
-        .col-lg-10
+            = f.label :remove_image
+      .col-md-12
+        .form-group
+          = link_to 'Remove Pet', @pet, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger pull-left"
           = f.submit 'Submit', :class => "btn btn-primary pull-right"

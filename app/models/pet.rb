@@ -1,7 +1,6 @@
 class Pet < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 	
-	has_one :image, :dependent => :destroy
 	belongs_to :gender
 	belongs_to :user
 	belongs_to :species
