@@ -1,20 +1,17 @@
 %p#notice= notice
-%p
-  %strong Name:
-  = @pet.name
-%p
-  %strong Age:
-  = age(@pet)
-%p
-  %strong Gender:
-  = @pet.gender.try(:name)
-%p
-  %strong Species:
-  = @pet.species.try(:name)
-%p
-  %strong Image:
-  = image_tag @pet.image.medium.url
-- if @pet.user_verified?(current_user)
-  = link_to 'Edit', edit_pet_path(@pet)
-  |
-=link_to 'Back', pets_path
+
+.col-md-4
+  = image_tag @pet.image.medium.url, :class => "img-responsive pull-right"
+.col-md-8
+  %h1= @pet.name
+  %p
+    %strong Age:
+    = age(@pet)
+  %p
+    %strong Gender:
+    = @pet.gender.try(:name)
+  %p
+    %strong Species:
+    = @pet.species.try(:name)
+  - if @pet.user_verified?(current_user)
+    = link_to 'Edit', edit_pet_path(@pet)
