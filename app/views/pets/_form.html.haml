@@ -36,5 +36,6 @@
             = f.label :remove_image
       .col-md-12
         .form-group
-          = link_to 'Remove Pet', @pet, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger pull-left"
+          - unless @pet.new_record?
+            = link_to 'Remove Pet', @pet, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger pull-left"
           = f.submit 'Submit', :class => "btn btn-primary pull-right"
