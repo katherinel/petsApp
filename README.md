@@ -9,6 +9,7 @@ A simple Rails app that allows you to sign up, log in, create a pet with a name,
 ###About the app:
 - The main model, Pet, has a belongs_to relationship to gender, user, and species. Gender could have potentially been stored as hardcoded values, since it’s not really necessary to create an entire table for something that is safe to assume will only ever contain three rows, but the way I did it works too.
 - User_id is stored on the pet, so that only the user that created the pet can edit or delete it.
+- I chose to display birthday as age in years and months, since that's how people generally talk about how old their pets are (often you can only guess the exact birthday, so it's not a terribly relevant piece of information).
 - There are db seeds to create genders and species.
 
 ###What was challenging:
