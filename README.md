@@ -1,4 +1,4 @@
-A simple Rails app that allows you to sign up, log in, create a pet with a name, age, gender, species, and image file. [View the demo on Heroku](immense-hollows-85513.herokuapp.com)
+A simple Rails app that allows you to sign up, log in, create a pet with a name, age, gender, species, and image file. [View the demo on Heroku](https://immense-hollows-85513.herokuapp.com)
 
 ###About the stack:
 - User registration is handled by Devise.
