@@ -11,7 +11,11 @@
       .container
         .navbar-header
           =link_to "Petbook", root_url, :class => "navbar-brand"
-        .navbar-collapse.collapse
+          %button.navbar-toggle{:type => "button", "data-target" => "#navbar-main", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+        #navbar-main.navbar-collapse.collapse.in
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li
