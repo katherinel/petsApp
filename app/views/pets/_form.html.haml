@@ -34,6 +34,8 @@
           .form-group
             = f.check_box :remove_image
             = f.label :remove_image
+        - else
+          = image_tag image_url("default-pet.jpg"), :class => "img-responsive"
       .col-md-12
         .form-group
           - unless @pet.new_record?
