@@ -17,3 +17,8 @@ a:hover {
 #datepicker {
 	z-index: 10000;
 }
+
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+}

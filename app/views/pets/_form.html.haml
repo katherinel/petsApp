@@ -10,23 +10,23 @@
             %li= message
     %fieldset
       .col-md-6
-        .form-group
-          = f.label :name
+        .form-group.required
+          = f.label :name, :class => "control-label"
           = f.text_field :name, :class => "form-control"
         .form-group
-          = f.label :birthday
+          = f.label :birthday, :class => "control-label"
           = f.text_field :birthday, :data => { :provide => "datepicker", 'date-format' => 'yyyy-mm-dd' }, :class => "form-control"
-        .form-group
-          = f.label :gender_id
+        .form-group.required
+          = f.label :gender_id, :class => "control-label"
           = f.collection_radio_buttons(:gender_id, Gender.all, :id, :name) do |b|
             .radio
               = b.label { b.radio_button + b.text}
-        .form-group
-          = f.label :species_id
+        .form-group.required
+          = f.label :species_id, :class => "control-label"
           = f.collection_select(:species_id, Species.all, :id, :name, {}, {:class => "form-control"})
       .col-md-6
         .form-group
-          = f.label :image
+          = f.label :image, :class => "control-label"
           = f.file_field :image
         - if f.object.image?
           .form-group

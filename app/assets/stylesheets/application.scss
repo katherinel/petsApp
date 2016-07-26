@@ -26,6 +26,7 @@
 // Bootstrap body padding for fixed navbar
 body { padding-top: 70px; }
 .navbar-fixed-top { z-index: 9; } // so it doesn't go over datepicker
+#logged_in_as { width: 100%; overflow: hidden; }
 
 // And finally bootswatch style itself
 @import "bootswatch/flatly/bootswatch";
